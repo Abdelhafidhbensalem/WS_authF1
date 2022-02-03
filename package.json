@@ -1,0 +1,17 @@
+{
+  "name": "ws_authf1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "backend":"cd backend && npm run back",
+    "front":"cd client && npm start",
+    "dev": "concurrently \"npm run front\" \"npm run backend\""
+  },
+  "author": "abs",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
