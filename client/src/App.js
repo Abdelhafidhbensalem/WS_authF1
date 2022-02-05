@@ -8,6 +8,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { getCurrentUser } from './JS/actions/actionsUser';
 import AuthUser from './components/AuthUser';
+import DashboardAdmin from './components/Dashboard/DashboardAdmin';
+import AuthAdmin from './components/AuthAdmin';
 
 function App() {
   const dispatch=useDispatch()
@@ -24,6 +26,8 @@ function App() {
      <Route path="/signin" element={<Signin/>}/>
      <Route path="/signup" element={<Signup/>}/>
      <Route path="/dashboard" element={<AuthUser><Dashboard/></AuthUser>} />
+     <Route path="/dashboardAdmin" element={<AuthAdmin><DashboardAdmin/></AuthAdmin>} />
+
    </Routes>
     </div>
   );

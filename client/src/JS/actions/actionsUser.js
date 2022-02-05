@@ -19,7 +19,10 @@ export const loginUser = (loggedUser, navigate) => async dispatch => {
         const response = await axios.post("http://localhost:5000/user/login", loggedUser)
         console.log(response);
         dispatch({ type: USER_SIGNIN_SUCCESS, payload: response.data })
-        navigate("/dashboard")
+        if (response.data.user.role == "admin") { navigate("/dashboardAdmin") }
+        else{
+            navigate("/dashboard")
+        }
     } catch (error) {
         console.dir(error)
         dispatch({ type: USER_SIGNIN_FAIL, payload: error })
@@ -39,6 +42,6 @@ export const getCurrentUser = () => async dispatch => {
     }
 }
 
-export const logoutUser=()=>{
-    return{type:LOGOUT_USER}
+export const logoutUser = () => {
+    return { type: LOGOUT_USER }
 }
